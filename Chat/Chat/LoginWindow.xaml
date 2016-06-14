@@ -1,0 +1,28 @@
+﻿<Window x:Class="Chat.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:res="clr-namespace:Chat.Properties"
+        xmlns:resources="clr-namespace:Chat.Resources"
+        Title="{x:Static resources:Language.MainWindowTitle}" Height="156" Width="400" FontSize="14" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closed="Window_Closed" KeyDown="Window_KeyDown">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="LoginLabel" Margin="10,26,10,0" VerticalAlignment="Top" Content="{x:Static resources:Language.LoginLabel}" HorizontalAlignment="Center" Grid.Column="0"/>
+        <Menu x:Name="MyMenu" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="2">
+            <MenuItem x:Name="LanguageMI" Header="{x:Static resources:Language.LanguageMI}">
+                <MenuItem x:Name="EnglishMI" Header="{x:Static resources:Language.EnglishMI}" IsCheckable="True" Click="EnglishMI_Click"/>
+                <MenuItem x:Name="RussianMI" Header="{x:Static resources:Language.RussianMI}" IsCheckable="True" Click="RussianMI_Click"/>
+                <MenuItem x:Name="UkrainianMI" Header="{x:Static resources:Language.UkrainianMI}" IsCheckable="True" Click="UkrainianMI_Click"/>
+                <MenuItem x:Name="GermanMI" Header="{x:Static resources:Language.GermanMI}" IsCheckable="True" Click="GermanMI_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="RegistrationButton" Header="{x:Static resources:Language.RegistrationButton}" Click="RegistrationButton_Click"/>
+        </Menu>
+        <TextBox x:Name="LoginBox" Height="23" Margin="10,55,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="0"/>
+        <Label x:Name="PassLabel" Content="{x:Static resources:Language.PassLabel}" Grid.Column="1" Margin="10,26,10,0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="PassBox" Height="23" Margin="10,55,10,0" MaxLength="30" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button x:Name="LoginButton" Content="{x:Static resources:Language.LoginButton}" Margin="10,83,10,0" VerticalAlignment="Top" Grid.Column="0" Click="LoginButton_Click"/>
+        <CheckBox x:Name="keepLoginBox" Content="{x:Static resources:Language.KeepLogin}" Grid.Column="1" Margin="10,86,10,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

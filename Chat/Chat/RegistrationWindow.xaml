@@ -1,0 +1,26 @@
+﻿<Window x:Class="Chat.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:resources="clr-namespace:Chat.Resources"
+        Title="{x:Static resources:Language.RegistrationWindowTitle}" Height="156" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" FontSize="14" Closing="Window_Closing" KeyDown="Window_KeyDown">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="LoginLabel" Margin="10,26,10,0" VerticalAlignment="Top" Content="{x:Static resources:Language.LoginLabel}" HorizontalAlignment="Center" Grid.Column="0"/>
+        <Menu x:Name="MyMenu" VerticalAlignment="Top" FontSize="14" Grid.ColumnSpan="2">
+            <MenuItem x:Name="LanguageMI" Header="{x:Static resources:Language.LanguageMI}">
+                <MenuItem x:Name="EnglishMI" Header="{x:Static resources:Language.EnglishMI}" IsCheckable="True" Click="EnglishMI_Click"/>
+                <MenuItem x:Name="RussianMI" Header="{x:Static resources:Language.RussianMI}" IsCheckable="True" Click="RussianMI_Click"/>
+                <MenuItem x:Name="UkrainianMI" Header="{x:Static resources:Language.UkrainianMI}" IsCheckable="True" Click="UkrainianMI_Click"/>
+                <MenuItem x:Name="GermanMI" Header="{x:Static resources:Language.GermanMI}" IsCheckable="True" Click="GermanMI_Click"/>
+            </MenuItem>
+        </Menu>
+        <TextBox x:Name="LoginBox" Height="23" Margin="10,55,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="0"/>
+        <Label x:Name="PassLabel" Content="{x:Static resources:Language.PassLabel}" Grid.Column="1" Margin="10,26,10,0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="PassBox1" Height="23" Margin="10,55,10,0" MaxLength="30" VerticalAlignment="Top" Grid.Column="1" LostFocus="PassBox1_LostFocus"/>
+        <PasswordBox x:Name="PassBox2" Height="23" Margin="10,83,10,0" MaxLength="30" VerticalAlignment="Top" Grid.Column="1" LostFocus="PassBox2_LostFocus"/>
+        <Button x:Name="RegButton" Content="{x:Static resources:Language.SignUpButton}" Margin="10,83,10,0" VerticalAlignment="Top" Grid.Column="0" Click="RegButton_Click"/>
+    </Grid>
+</Window>

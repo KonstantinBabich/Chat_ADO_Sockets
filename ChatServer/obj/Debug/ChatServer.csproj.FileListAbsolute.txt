@@ -1,0 +1,3 @@
+D:\Backup cloud\Документы\Курсовая .NET\ChatServer\bin\Debug\ChatServer.exe.config
+D:\Backup cloud\Документы\Курсовая .NET\ChatServer\obj\Debug\Interop.NATUPNPLib.dll
+D:\Backup cloud\Документы\Курсовая .NET\ChatServer\obj\Debug\ChatServer.csproj.ResolveComReference.cache

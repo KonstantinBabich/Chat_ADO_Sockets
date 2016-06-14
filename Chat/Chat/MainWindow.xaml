@@ -1,0 +1,41 @@
+﻿<Window x:Class="Chat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:resources="clr-namespace:Chat.Resources"
+        Title="{x:Static resources:Language.MainWindowTitle}" Height="350" Width="600" WindowStartupLocation="CenterScreen" FontSize="14" Closing="Window_Closing"
+        MinHeight="300" MinWidth="500"
+        >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*" MaxWidth="300"/>
+            <ColumnDefinition Width="0.1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*" MaxHeight="100"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <Menu x:Name="MyMenu" VerticalAlignment="Top" FontSize="14" Height="21" Grid.ColumnSpan="4">
+            <MenuItem x:Name="LanguageMI" Header="{x:Static resources:Language.LanguageMI}">
+                <MenuItem x:Name="EnglishMI" Header="{x:Static resources:Language.EnglishMI}" IsCheckable="True" Click="EnglishMI_Click"/>
+                <MenuItem x:Name="RussianMI" Header="{x:Static resources:Language.RussianMI}" IsCheckable="True" Click="RussianMI_Click"/>
+                <MenuItem x:Name="UkrainianMI" Header="{x:Static resources:Language.UkrainianMI}" IsCheckable="True" Click="UkrainianMI_Click"/>
+                <MenuItem x:Name="GermanMI" Header="{x:Static resources:Language.GermanMI}" IsCheckable="True" Click="GermanMI_Click"/>
+            </MenuItem>
+        </Menu>
+        <TabControl Margin="5,40,5,5" Grid.Column="1">
+            <TabItem Name="MainTabItem" Header="{x:Static resources:Language.MainRoomCaption}">
+                <Grid Background="#FFE5E5E5" Name="ChatGrid">
+                    <ScrollViewer Name="scrollViewer">
+                        <StackPanel x:Name="chatPanel" Margin="0"/>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <ListBox x:Name="usersList" Grid.Column="2" Margin="5,64,5,5" Grid.RowSpan="2"/>
+        <Label x:Name="UsersListLabel" Content="{x:Static resources:Language.UsersCaption}" Grid.Column="2" HorizontalAlignment="Left" Margin="5,40,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="messageBox" Margin="5" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" KeyDown="textBox_KeyDown" MaxLength="255" IsUndoEnabled="False"/>
+    </Grid>
+</Window>
